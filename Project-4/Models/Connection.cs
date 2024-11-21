@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Collections.Generic;
@@ -11,11 +12,11 @@ namespace Utilities
     public class DBConnect
     {
         // Main Connection String - used for the published web application and project submissions.
-        String SqlConnectString = "server=cis-mssql1.temple.edu;Database=sp24_3342_tuxNNNNN;User id=tuxNNNNN;Password=XXXXXX";
-        
+        //String SqlConnectString = "server=cis-mssql1.temple.edu;Database=fa24_3342_tun93932;User id=tun93932;Password=doh7muPeingi;TrustServerCertificate=True;";
+
         // Home Connection String - used for working from home using SSH Tunneling.
-        //String SqlConnectString = "server=127.0.0.1,5555;Database=sp24_3342_tuxNNNNN;User id=tuxNNNNN;Password=XXXXXX";
-        
+        String SqlConnectString = "server=127.0.0.1,5555;Database=fa24_3342_tun93932;User id=tun93932;Password=doh7muPeingi;TrustServerCertificate=True;";
+
         SqlConnection myConnectionSql;
         SqlCommand objCmd;
         SqlDataReader objDataReader;

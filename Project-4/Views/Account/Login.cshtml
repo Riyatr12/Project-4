@@ -1,0 +1,70 @@
+﻿@using Project_4.Models
+@model User
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = null;
+    ViewData["Title"] = "Login";
+
+}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+    </head>
+    <body>
+    <h1>@ViewData["Title"] </h1>
+    <br />
+    <br />
+
+    @if (ViewData["ErrorMessage"] != null)
+    {
+       @ViewData["ErrorMessage"]
+  
+    }
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+            @ViewData["SuccessMessage"]
+    }
+
+    <form asp-controller="Account" asp-action="Login" method="POST">
+        <div>
+            <label for="UserName">Username: </label>
+            <input id="UserName" name="UserName" value="@ViewBag.UserName" placeholder="Enter your username" />
+          <br /><br />
+        </div>
+
+        <div>
+            <label for="Password">Password: </label>
+            <input id="Password" name="Password" type="password" placeholder="Enter your password" />
+            <br /><br />
+        </div>
+        <div>
+            <div>
+                <input type="checkbox" id="rememberMe" name="rememberMe" />
+                <label for="rememberMe">Remember Me</label><br /><br />
+            </div>
+        </div>
+
+        <button type="submit">Login</button><br /><br />
+
+        <div>
+            <p>
+                <label>Forgot your username? </label>
+                <a asp-controller="Account" asp-action="ForgotUserName">Click here</a>
+            </p>
+            <p>
+                <label>Don’t have an account? </label>
+                <a asp-controller="Account" asp-action="Register">Register now</a>
+            </p>
+        </div>
+        </form>
+
+    
+
+    </body>
+</html>
